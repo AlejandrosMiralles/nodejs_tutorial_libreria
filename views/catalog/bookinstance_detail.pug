@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1 ID: #{bookInstance._id}
+  p 
+    strong Title: 
+    a(href=bookInstance.book.url) #{ bookInstance.book.title } 
+    
+  p 
+    strong Imprint: 
+    span #{ bookInstance.imprint}
+
+  p 
+    strong Status: 
+    span #{ bookInstance.status }  
+
+  p 
+    strong Due back: 
+    span #{ bookInstance.due_back_formatted}
+  
+      hr
+    p
+      a(href=bookInstance.url+'/delete') Delete BookInstance
+    p
+      a(href=bookInstance.url+'/update') Update BookInstance

@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1= title
+
+  ul
+    each author in author_list
+      li
+        - var nacimiento = (author.date_of_birth)? author.date_of_birth_formatted : "Invalid DateTime";
+        - var muerte = (author.date_of_death)? author.date_of_death_formatted : "act" ;
+
+        a(href=author.url) #{ author.name } : 
+        span ( #{nacimiento} - #{muerte})
+
+    else
+      li There are no author.
